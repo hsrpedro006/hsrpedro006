@@ -1,1 +1,71 @@
+num_pescadores = int(input("Quantos pescadores deseja cadastrar? "))
+pescadores = []
+
+# Loop para coletar os dados de cada pescador
+for i in range(num_pescadores):
+    print(f"\nCadastro do pescador {i + 1}:")
+    nome = input("Nome: ")
+    endereco = input("Endereço: ")
+    idade = int(input("Idade: ")) 
+    # While True, O uso do while True em Python cria um laço (loop) infinito.
+    while True:
+        sexo = input("Sexo de nascimento (feminino ou masculino): ").lower()
+        #lower() deixa tudo preenchido no input em minusculo
+        if sexo in ['feminino', 'masculino']:
+            break
+            # break é a pausa do while true, para não rodar infinitamente
+        else:
+            print("Por favor, insira apenas 'feminino' ou 'masculino'.")
+            # para voltar e escrever "feminino" e "masculino", caso a digitação não seja essa
+    estado_civil = input("Estado civil: ")
+    carteirinha_de_pesca = int(input('Digite o número de sua carteirinha de pesca: '))
+
+    # Foi criado um dicionário com os dados do pescador, o dicionário armazenara as listas contendo os cadastros.
+    # O dicionário permite que os valores sejam gravados em pares, assim salvando a palavra chave com o valor.
+    # A palavra chave "nome" vai receber um valor correspondente ao nome.
+    pescador = {
+        "nome": nome,
+        "endereco": endereco,
+        "idade": idade,
+        "sexo": sexo,
+        "estado_civil": estado_civil
+    }
+
+    pescadores.append(pescador)
+
+print("\nDados dos pescadores cadastrados:")
+for pescador in pescadores:
+    print(f"Nome: {pescador['nome']}")
+    print(f"Endereço: {pescador['endereco']}")
+    print(f"Idade: {pescador['idade']}")
+    print(f"Sexo de nascimento: {pescador['sexo']}")
+    print(f"Estado civil: {pescador['estado_civil']}")
+    print("-" * 30)
+
+
+#Questao 2
+print(f'\nNomes em ordem alfabética:')
+nomes_ordenados = sorted(pescadores, key=lambda x: x["nome"])
+#sorted constrói uma lista ordenada, a key é a função que chama a expressão lambda, essa função faz o pegar o valor(o input dos 'nome's) da palavra chave nome
+
+for pescador in nomes_ordenados:
+    print(pescador["nome"])
+
+#Questão 3
+total_pescadores = len(pescadores)
+total_homens = 0
+total_mulheres = 0
+
+for pescador in pescadores:
+    if pescador["sexo"] == "masculino":
+        total_homens += 1
+    elif pescador["sexo"] == "feminino":
+        total_mulheres += 1
+print("-" * 30)
+print("-" * 30)
+print("\033[1;35;36mRelatório de Pescadores\033[02m\n")
+print(f"Total de pescadores: {total_pescadores}")
+print(f"Total de homens: {total_homens}")
+print(f"Total de mulheres: {total_mulheres}")
+
 
