@@ -6,8 +6,10 @@
 
 
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=hsrpedro006&show_icons=true&theme=tokyonight)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=hsrpedro006&show_icons=true&theme=tokyonight)<br/>
 
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=hsrpedro006&hide_progress=true)
 
 ### Tecnologias que eu uso no meu dia a dia 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
